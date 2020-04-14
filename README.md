@@ -11,16 +11,17 @@
 
 * Project ManageMent
 
--- Hangout, Slack 등의 Project Management Tool을 활용
--- Agile 기법의 Sprint (2주 기준) 방식으로 Project를 진행할 예정
+-> Hangout, Slack 등의 Project Management Tool을 활용
+
+-> Agile 기법의 Sprint (2주 기준) 방식으로 Project를 진행할 예정
 
 
 * 프로젝트 환경
 
--- 사용 OS : Window
+-> 사용 OS : Window
 
--- 개발 Tool : Jupyter Notebook, CoLab
+-> 개발 Tool : Jupyter Notebook, CoLab
 
--- 사용 언어 : Python
+-> 사용 언어 : Python
 
--- UI : WebService 제공
+-> UI : WebService 제공
