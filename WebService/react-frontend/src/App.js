@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import CanvasJSReact from './library/canvasjs.react';
-
+import Map from './library/Map';
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
@@ -55,8 +55,10 @@ class App extends React.Component {
 				/* onRef={ref => this.chart = ref} */
 			/>
       <div> hihihihi </div>
+	  <Map/>
 			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
 		</div>
+		
 		);
 	}
 }
