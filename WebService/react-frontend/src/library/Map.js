@@ -2,15 +2,12 @@ import React from "react";
 import { VectorMap } from "react-jvectormap";
 
 class Map extends React.Component {
+
   // App 으로 data 전달 하기
   handleClick = (e, countryCode) => {
     // this.refs.map.$mapObject.tip.hide();
     setTimeout(()=> { Array.from(document.getElementsByClassName("jvectormap-tip")).forEach((el) => { el.style.display = 'none' }); },10);
     this.props.onCreate(countryCode);
-  };
-
-  handleTip = (event, label, code) => {
-    event.preventDefault();
   };
 
   render() {
@@ -56,13 +53,12 @@ class Map extends React.Component {
           }}
           regionsSelectable={true}
           regionsSelectableOne={true}
-          // onRegionTipShow={this.handleTip}
           series={{
             regions: [
               {
                 values : mapData,
                 //this is your data
-                scale: ["#146804", "#71c7d4"], //your color game's here
+                scale: ["#146804", "#C43030"], //your color game's here
                 normalizeFunction: "polynomial",
               },
             ],

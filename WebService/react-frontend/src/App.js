@@ -4,6 +4,7 @@ import CanvasJSReact from "./library/canvasjs.react";
 import Map from "./library/Map";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+import logo from "./covid_logo.png";
 
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
@@ -79,14 +80,22 @@ class App extends React.Component {
     };
     return (
       <div>
-        <Grid container spacing={3}>
-          <Grid item xs={6}>
-            <Paper style={{ margin: 5 }}>
-              <Map onCreate={this.handleCountry} selectCountry = {country} />
+        <div style={{ textAlign: "center", margin: 1 }}>
+          <img src={logo} />
+        </div>
+        <Grid
+          container
+          spacing={3}
+          justify="center"
+          style={{ padding : 10}}
+        >
+          <Grid item xs={6} >
+            <Paper style={{padding: 5}}>
+              <Map onCreate={this.handleCountry} selectCountry={country} />
             </Paper>
           </Grid>
-          <Grid item xs={6}>
-            <Paper style={{ margin: 5 }}>
+          <Grid item xs={6} >
+            <Paper style={{ padding : 5}}>
               <CanvasJSChart options={options} />
             </Paper>
           </Grid>
