@@ -2,13 +2,17 @@ import React from "react";
 import { VectorMap } from "react-jvectormap";
 
 class Map extends React.Component {
-
+  
   // App 으로 data 전달 하기
   handleClick = (e, countryCode) => {
     // this.refs.map.$mapObject.tip.hide();
+    
+    // tip hide
     setTimeout(()=> { Array.from(document.getElementsByClassName("jvectormap-tip")).forEach((el) => { el.style.display = 'none' }); },10);
+    // 데이터 전달
     this.props.onCreate(countryCode);
   };
+
 
   render() {
     const {selectCountry} = this.props;

@@ -12,16 +12,17 @@ class App extends React.Component {
   state = {
     country: "",
     graphData: [],
+    visible: false
   };
 
   // Map에서 선택 된 나라 정보 받아오기
   handleCountry = (data) => {
-    this.setState({ country: data });
+    this.setState({ country: data , visible : true});
     console.log(data);
   };
 
   render() {
-    const { country } = this.state;
+    const { country , visible} = this.state;
     console.log("Main render");
     console.log(country);
     const options = {
@@ -89,16 +90,18 @@ class App extends React.Component {
           justify="center"
           style={{ padding : 10}}
         >
-          <Grid item xs={6} >
+          <Grid item xs={12}  sm={6}>
             <Paper style={{padding: 5}}>
               <Map onCreate={this.handleCountry} selectCountry={country} />
             </Paper>
           </Grid>
-          <Grid item xs={6} >
+          { visible ? 
+          <Grid item xs={12} sm={6} >
             <Paper style={{ padding : 5}}>
               <CanvasJSChart options={options} />
             </Paper>
-          </Grid>
+          </Grid> : null
+          }
         </Grid>
       </div>
     );
