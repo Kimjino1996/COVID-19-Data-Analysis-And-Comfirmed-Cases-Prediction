@@ -5,26 +5,38 @@ import Map from "./library/Map";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import logo from "./covid_logo.png";
+import axios from "axios";
 
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+const config = {
+  headers: { "Access-Control-Allow-Origin": "*" },
+};
 
 class App extends React.Component {
   state = {
     country: "",
     graphData: [],
-    visible: false
+    visible: false,
   };
 
   // Map에서 선택 된 나라 정보 받아오기
   handleCountry = (data) => {
-    this.setState({ country: data , visible : true});
+    this.setState({ country: data, visible: true });
+    var sendData = { country: { data } };
+    console.log(sendData);
+
+    // 서버로 그래프 데이터 받아오기
+    axios.get(`http://127.0.0.1:5000/getData/${data}`).then((res) => {
+      console.log(res.data);
+    });
+
     console.log(data);
   };
 
   render() {
-    const { country , visible} = this.state;
+    const { country, visible } = this.state;
     console.log("Main render");
-    console.log(country);
+    console.log(window.token);
     const options = {
       animationEnabled: true,
       title: {
@@ -84,24 +96,19 @@ class App extends React.Component {
         <div style={{ textAlign: "center", margin: 1 }}>
           <img src={logo} />
         </div>
-        <Grid
-          container
-          spacing={3}
-          justify="center"
-          style={{ padding : 10}}
-        >
-          <Grid item xs={12}  sm={6}>
-            <Paper style={{padding: 5}}>
+        <Grid container spacing={3} justify="center" style={{ padding: 10 }}>
+          <Grid item xs={12} sm={6}>
+            <Paper style={{ padding: 5 }}>
               <Map onCreate={this.handleCountry} selectCountry={country} />
             </Paper>
           </Grid>
-          { visible ? 
-          <Grid item xs={12} sm={6} >
-            <Paper style={{ padding : 5}}>
-              <CanvasJSChart options={options} />
-            </Paper>
-          </Grid> : null
-          }
+          {visible ? (
+            <Grid item xs={12} sm={6}>
+              <Paper style={{ padding: 5 }}>
+                <CanvasJSChart options={options} />
+              </Paper>
+            </Grid>
+          ) : null}
         </Grid>
       </div>
     );
