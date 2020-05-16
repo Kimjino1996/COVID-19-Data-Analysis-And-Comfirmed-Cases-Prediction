@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/react/css/main.9e887801.chunk.css",
-    "main.js": "/static/react/js/main.91336d75.chunk.js",
-    "main.js.map": "/static/react/js/main.91336d75.chunk.js.map",
+    "main.js": "/static/react/js/main.ffaeaa96.chunk.js",
+    "main.js.map": "/static/react/js/main.ffaeaa96.chunk.js.map",
     "runtime-main.js": "/static/react/js/runtime-main.7b3b5537.js",
     "runtime-main.js.map": "/static/react/js/runtime-main.7b3b5537.js.map",
     "js/2.6f23be3c.chunk.js": "/static/react/js/2.6f23be3c.chunk.js",
@@ -11,13 +11,13 @@
     "css/main.9e887801.chunk.css.map": "/static/react/css/main.9e887801.chunk.css.map",
     "js/2.6f23be3c.chunk.js.LICENSE.txt": "/static/react/js/2.6f23be3c.chunk.js.LICENSE.txt",
     "media/covid_logo.png": "/static/react/media/covid_logo.456edd1a.png",
-    "precache-manifest.99151053259a13a739f0f9ae70fa0a13.js": "/static/react/precache-manifest.99151053259a13a739f0f9ae70fa0a13.js",
+    "precache-manifest.b9543e7daafd41e4dc8c62039e210326.js": "/static/react/precache-manifest.b9543e7daafd41e4dc8c62039e210326.js",
     "service-worker.js": "/static/react/service-worker.js"
   },
   "entrypoints": [
     "js/runtime-main.7b3b5537.js",
     "js/2.6f23be3c.chunk.js",
     "css/main.9e887801.chunk.css",
-    "js/main.91336d75.chunk.js"
+    "js/main.ffaeaa96.chunk.js"
   ]
 }
