@@ -32,22 +32,20 @@ def get_data(country):
     )
     query_job = client.query(query, job_config= job_config)
     print("The query data :")
-    dates = []
-    susceptible = []
-    infected = []
-    recovered = []
-    infected_data = []
+    infected_dates = []
+    string_temp=""
+    infected_data_dates = []
     recovered_data = []
     for row in query_job:
-        dates.append(row[0])
-        susceptible.append(row[1])
-        infected.append(row[2])
-        recovered.append(row[3])
-        infected_data.append(row[4])
-        recovered_data.append(row[5])
+        string_temp=row[0].strftime("%Y-%m-%d")+"-"+str(row[2])
+        infected_dates.append(string_temp)
+        string_temp=""
+        string_temp = row[0].strftime("%Y-%m-%d") + "-" + str(row[4])
+        infected_data_dates.append(string_temp)
+        string_temp=""
 
     if request.method == 'GET':
-        return jsonify(date = dates,suscept=susceptible, infect=infected,recover=recovered,infect_data=infected_data,recover_data=recovered_data)
+        return jsonify(infect_date = infected_dates,infected_data_date=infected_data_dates)#,suscept=susceptible, infect=infected,recover=recovered,infect_data=infected_data,recover_data=recovered_data
 
 if __name__ == "__main__":
     app.run(debug=True)
