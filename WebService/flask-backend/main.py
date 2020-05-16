@@ -46,7 +46,7 @@ def get_data(country):
         string_temp=""
 
     if request.method == 'GET':
-        return jsonify(prediction = infeㅇcted_dates,real=infected_data_dates)#,suscept=susceptible, infect=infected,recover=recovered,infect_data=infected_data,recover_data=recovered_data
+        return jsonify(prediction = infected_dates,real=infected_data_dates)
 
 if __name__ == "__main__":
     app.run(debug=True)
