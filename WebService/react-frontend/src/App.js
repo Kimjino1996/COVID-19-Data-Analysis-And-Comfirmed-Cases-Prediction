@@ -22,9 +22,9 @@ class App extends React.Component {
   // Map에서 선택 된 나라 정보 받아오기
   handleCountry = (data) => {
     this.setState({ country: data, visible: true });
-    var sendData = { country: { data } };
-    console.log(sendData);
 
+    // if(data === "CN") sendData = "1"
+    
     // 서버로 그래프 데이터 받아오기
     axios.get(`http://127.0.0.1:5000/getData/${data}`).then((res) => {
       console.log(res.data);
@@ -56,18 +56,18 @@ class App extends React.Component {
           xValueFormatString: "MMMM",
           type: "spline",
           dataPoints: [
-            { x: new Date(2017, 0), y: 10000 },
-            { x: new Date(2017, 1), y: 27980 },
-            { x: new Date(2017, 2), y: 42800 },
-            { x: new Date(2017, 3), y: 32400 },
-            { x: new Date(2017, 4), y: 35260 },
-            { x: new Date(2017, 5), y: 33900 },
-            { x: new Date(2017, 6), y: 40000 },
-            { x: new Date(2017, 7), y: 52500 },
-            { x: new Date(2017, 8), y: 32300 },
-            { x: new Date(2017, 9), y: 2313 },
-            { x: new Date(2017, 10), y: 37160 },
-            { x: new Date(2017, 11), y: 38400 },
+            { x: new Date(11, 31), y: 10000 },
+            { x: new Date(12, 1), y: 27980 },
+            { x: new Date(12, 2), y: 42800 },
+            { x: new Date(12, 3), y: 32400 },
+            { x: new Date(12, 4), y: 35260 },
+            { x: new Date(12, 5), y: 33900 },
+            { x: new Date(12, 6), y: 40000 },
+            { x: new Date(12, 7), y: 52500 },
+            { x: new Date(12, 8), y: 32300 },
+            { x: new Date(12, 9), y: 2313 },
+            { x: new Date(12, 10), y: 37160 },
+            { x: new Date(12, 11), y: 38400 },
           ],
         },
         {
