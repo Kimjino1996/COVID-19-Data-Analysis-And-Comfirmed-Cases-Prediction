@@ -24,7 +24,8 @@ def get_data(country):
     # query문 설정
     query = """ SELECT * 
      FROM `cdp2-273404.cdp_data_prediction.predict_*`
-     WHERE _TABLE_SUFFIX = @suffix """
+     WHERE _TABLE_SUFFIX = @suffix
+     ORDER BY date_field_0 ASC """
     job_config = bigquery.QueryJobConfig(
         query_parameters=[
             bigquery.ScalarQueryParameter("suffix", "STRING", country)
